@@ -32,6 +32,55 @@
     <p class="text-xl">Driving change through research, testing, and practical technology implementation</p>
   </section>
 
+<!-- About -->
+<section id="about" class="max-w-5xl mx-auto py-16 px-4">
+  <!-- Image Slider -->
+  <div class="relative max-w-4xl mx-auto mb-8">
+    <div id="slider" class="overflow-hidden rounded-lg shadow-lg">
+      <div class="flex transition-transform duration-500" style="transform: translateX(0%);">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="AI technology" class="w-full flex-shrink-0 object-cover h-56 md:h-72" />
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Prototyping" class="w-full flex-shrink-0 object-cover h-56 md:h-72" />
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Coding on laptop" class="w-full flex-shrink-0 object-cover h-56 md:h-72" />
+       <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=800&q=80" alt="Team working on tech" class="w-full flex-shrink-0 object-cover h-56 md:h-72" />
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="AI network" class="w-full flex-shrink-0 object-cover h-56 md:h-72" />
+  
+
+
+</div>
+    </div>
+    <!-- Controls -->
+    <button id="prevBtn" aria-label="Previous" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-indigo-600 bg-opacity-70 text-white px-3 py-1 rounded hover:bg-indigo-700">‹</button>
+    <button id="nextBtn" aria-label="Next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-indigo-600 bg-opacity-70 text-white px-3 py-1 rounded hover:bg-indigo-700">›</button>
+  </div>
+
+  <h3 class="text-3xl font-semibold mb-4">Who We Are</h3>
+  <p class="text-lg">
+    BS-Labs is a research and development studio specializing in practical AI and technology solutions. We work closely with businesses to turn emerging technologies into reliable tools that address real-world needs, improve operations, and create long-term value.
+  </p>
+</section>
+
+<script>
+  const slider = document.querySelector('#slider > div');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const totalSlides = slider.children.length;
+  let currentIndex = 0;
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+    updateSlider();
+  });
+</script>
+
   <!-- About -->
   <section id="about" class="max-w-5xl mx-auto py-16 px-4">
     <h3 class="text-3xl font-semibold mb-4">Who We Are</h3>
